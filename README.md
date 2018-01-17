@@ -1,5 +1,7 @@
 # graphql-demo
 
+Based on [this Launchpad example](https://launchpad.graphql.com/1jzxrj179).
+
 ## Setup
 - `npm install`
 

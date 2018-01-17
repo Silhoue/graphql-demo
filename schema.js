@@ -17,12 +17,8 @@ const posts = [
 ];
 
 let getUser = id => users.find(user => user.id === id);
-let getPosts = userId => {
-  return userId ? posts.filter(post => post.userId === userId) : posts
-};
-let getPost = id => {
-  return posts.find(post => post.id === id)
-}
+let getPost = id =>  posts.find(post => post.id === id);
+let getPosts = userId => (userId ? posts.filter(post => post.userId === userId) : posts);
 
 const PostType = new GraphQLObjectType({
   name: "Post",
@@ -103,7 +99,7 @@ const MutationType = new GraphQLObjectType({
   fields: mutationFields
 });
 
-let schema = new GraphQLSchema({
+const schema = new GraphQLSchema({
   query: QueryType,
   mutation: MutationType
 });
